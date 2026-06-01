@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baba Yaga - Menú Digital | LA CARTA</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../imagenes/LACARTA.png" alt="LA CARTA" class="logo-img">
+                    <span class="logo-text"><span class="letter-golden">L</span>A CARTA</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="#como-funciona" class="nav-link">Cómo funciona</a></li>
+                    <li><a href="#para-negocios" class="nav-link">Para negocios</a></li>
+                    <li><a href="#ontacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+        <section class="negocio-hero">
+            <div class="container">
+                <div class="hero-interno">
+                    <img src="../imagenes/LOGO.webp" alt="Baba Yaga" class="negocio-logo">
+                    <h1>Baba Yaga</h1>
+                    <p class="negocio-descripcion">Visítanos y no sabrás si vives o sueñas, disfrutando de nuestras exquisitas ofertas y coctelería.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--INFO-->
+        <section class="negocio-info">
+            <div class="container">
+                <div class="info-cards">
+                    <div class="info-card"><i class="fas fa-map-marker-alt"></i>📍 Luis Estevez entre Martí y Boulevard #358, Santa Clara</div>
+                    <div class="info-card"><i class="fas fa-clock"></i>⏰ Lun-Jue: 10:30am-10:30pm / Vie-Dom: 10:30am-12:00am</div>
+                    <div class="info-card"><i class="fas fa-star"></i>⭐ 3.9 (24 reseñas)</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- WHATSAPP + MAPA -->
+        <section class="contacto-mapa">
+            <div class="container">
+                <div class="contacto-mapa-grid">
+                    <div class="whatsapp-box">
+                        <h3>📱 Contacto directo</h3>
+                        <a href="https://wa.me/5356715283?text=Hola%2C%20vi%20su%20men%C3%BA%20en%20LA%20CARTA%20y%20quisiera%20hacer%20un%20pedido" class="btn-whatsapp-grande" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+                        </a>
+                    </div>
+                    <div class="mapa-box">
+                        <h3>📍 Cómo llegar</h3>
+                        <div id="mapa" class="mapa-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORÍAS + BUSCADOR -->
+        <section class="filtros-menu">
+            <div class="container">
+                <div class="filtros-header">
+                    <div class="categorias-tabs">
+                        <button class="categoria-tab active" data-cat="Cafés">☕ Cafés</button>
+                        <button class="categoria-tab" data-cat="Bebidas Frías">🥤 Bebidas Frías</button>
+                        <button class="categoria-tab" data-cat="Coctelería">🍸 Coctelería</button>
+                        <button class="categoria-tab" data-cat="Comidas">🍔 Comidas</button>
+                        <button class="categoria-tab" data-cat="Postres">🍰 Postres</button>
+                    </div>
+                    <div class="buscador-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="search" id="buscador-productos" placeholder="Buscar en el menú...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTOS -->
+        <section class="productos-lista">
+            <div class="container">
+                <div id="productos-container" class="productos-list">
+                    <!-- Productos cargados dinámicamente -->
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

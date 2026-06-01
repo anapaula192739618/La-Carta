@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="LA CARTA - Directorio de catálogos digitales para negocios cubanos. Encuentra productos y servicios cerca de ti.">
+    <meta name="keywords" content="catálogo digital, directorio Cuba, restaurantes, cafeterías, bares, tiendas Cuba">
+    <meta name="author" content="LA CARTA">
+    <title>LA CARTA - Catálogos digitales de negocios cubanos</title>
+    
+    <!-- Preconnect para mejor carga -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!-- Preload de CSS -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="imagenes/favicon2.png">
+    <link rel="shortcut icon" type="image/png" href="imagenes/favicon2.png">
+</head>
+<body>
+
+    <!-- ===================== (Barra de navegación principal) ========================== -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagenes/LACARTA.png" alt="LA CARTA" class="logo-img">
+                    <span class="logo-text"><span class="letter-golden">L</span>A CARTA</span>
+                </a>
+            </div>
+            
+            <!-- Navegación principal -->
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="#como-funciona" class="nav-link">Cómo funciona</a></li>
+                    <li><a href="#para-negocios" class="nav-link">Para negocios</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Botón menú móvil -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    
+    <!-- MAIN (Contenido principal) -->
+    <main>
+        
+        <!-- SECCIÓN HERO (Portada principal)             -->
+        
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">La vitrina digital <span class="highlight">que tu negocio merece</span></h1>
+                    <p class="hero-subtitle">Descubre los mejores lugares para comer, beber y disfrutar en Cuba. Restaurantes, cafeterías, bares y más.</p>
+                    
+                    <!-- Buscador principal de negocios -->
+                    <div class="hero-search">
+                        <div class="search-wrapper">
+                            <input type="text" id="business-search" name="q" class="search-input-hero" placeholder="Buscar restaurante, cafetería, bar o lugar..." autocomplete="off" aria-label="Buscador de lugares">
+                            <button id="search-btn" class="search-btn" aria-label="Buscar">Buscar</button>
+                        </div>
+                        <div id="search-suggestions" class="search-suggestions"></div>
+                    </div>
+                    
+                    <!-- Categorías populares -->
+                    <div class="popular-categories">
+                        <span class="popular-label">Explorar por tipo:</span>
+                        <button class="category-chip" data-categoria="restaurante">🍽️ Restaurantes</button>
+                        <button class="category-chip" data-categoria="cafeteria">☕ Cafeterías</button>
+                        <button class="category-chip" data-categoria="bar">🍸 Bares & Coctelerías</button>
+                        <button class="category-chip" data-categoria="heladeria">🍦 Heladerías</button>
+                        <button class="category-chip" data-categoria="panaderia">🥐 Panaderías & Pastelerías</button>
+                        <button class="category-chip" data-categoria="comida-rapida">🍔 Comida Rápida</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECCIÓN "CÓMO FUNCIONA"-->
+        <section id="como-funciona" class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">¿Cómo funciona <span class="highlight">LA CARTA</span>?</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">🔎</div>
+                        <h3>Busca</h3>
+                        <p>Encuentra restaurantes, cafeterías, bares y lugares para disfrutar.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">📖</div>
+                        <h3>Explora</h3>
+                        <p>Revisa su menú digital, precios, fotos y horarios de atención.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">✉️</div>
+                        <h3>Contacta</h3>
+                        <p>Reserva tu mesa o haz tu pedido directo por WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- SECCIÓN DE NEGOCIOS DESTACADOS                -->
+        
+        <section class="featured-businesses">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Lugares <span class="highlight">Destacados</span></h2>
+                    <a href="#todos-los-negocios" class="view-all-link">Ver todos →</a>
+                </div>
+                
+                <!-- Grid de negocios destacados -->
+                <div id="featured-grid" class="business-grid">
+                    <!-- Spinner de carga dentro del grid -->
+                    <div class="loading-spinner" id="loading-spinner">
+                        <div class="spinner"></div>
+                        <p>Cargando lugares...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================ -->
+        <!-- SECCIÓN TODOS LOS NEGOCIOS (con filtros)     -->
+        <!-- ============================================ -->
+        <section id="todos-los-negocios" class="all-businesses">
+            <div class="container">
+                <h2 class="section-title">Todos los <span class="highlight">Lugares</span></h2>
+                
+                <!-- Barra de filtros y búsqueda secundaria -->
+                <div class="filters-bar">
+                    <div class="filter-group">
+                        <label for="category-filter">Tipo de lugar</label>
+                        <select id="category-filter" class="filter-select" aria-label="Filtrar por tipo de lugar">
+                            <option value="todas">Todos los tipos</option>
+                            <!-- Las categorías se cargan dinámicamente -->
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="sort-filter">Ordenar por</label>
+                        <select id="sort-filter" class="filter-select" aria-label="Ordenar resultados">
+                            <option value="reciente">Más reciente</option>
+                            <option value="nombre-asc">Nombre (A-Z)</option>
+                            <option value="nombre-desc">Nombre (Z-A)</option>
+                            <option value="popular">Más populares</option>
+                            <option value="rating">Mejor valorados</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="zone-filter">Zona</label>
+                        <select id="zone-filter" class="filter-select" aria-label="Filtrar por zona">
+                            <option value="todas">Todas las zonas</option>
+                            <option value="centro">Centro</option>
+                            <option value="vedado">Vedado</option>
+                            <option value="plaza">Plaza</option>
+                            <option value="miramar">Miramar</option>
+                            <option value="old-havana">Habana Vieja</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Contador de resultados -->
+                <div class="results-bar">
+                    <p id="businesses-count">Cargando lugares...</p>
+                </div>
+                
+                <!-- Grid de todos los negocios -->
+                <div id="businesses-grid" class="business-grid">
+                </div>
+                
+                <!-- Botón "Cargar más"-->
+                <div class="load-more-container" id="load-more-container" style="display: none;">
+                    <button id="load-more-btn" class="btn-load-more" aria-label="Cargar más lugares">Cargar más</button>
+                </div>
+            </div>
+        </section>
+        
+        <!--============================================  SECCIÓN PARA NEGOCIOS   ============================================ -->
+        <section id="para-negocios" class="cta-business">
+            <div class="container cta-container">
+                <div class="cta-content">
+                    <h2>¿Tienes un restaurante o local y aún no estás en <span class="highlight">LA CARTA</span>?</h2>
+                    <p>Únete a la plataforma de menús digitales en Cuba. Llega a más clientes, muestra tu carta de manera única y aumenta tus reservas.</p>
+                    <div class="cta-buttons">
+                        <a href="#planes" class="btn btn-primary">Ver planes</a>
+                        <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================================== SECCIÓN PLANES Y PRECIOS ============================================ -->
+        <section id="planes" class="pricing">
+            <div class="container">
+                <h2 class="section-title">Planes <span class="highlight">para tu negocio</span></h2>
+                <div class="pricing-grid">
+                    
+                    <!-- PLAN 1: BRONCE -->
+                    <div class="pricing-card bronce">
+                        <div class="pricing-badge bronce">BRONCE</div>
+                        <h3>Para empezar</h3>
+                        <div class="pricing-price">300 <span>CUP / mes</span></div>
+                        <ul class="pricing-features">
+                            <li> Hasta 30 productos</li>
+                            <li> WhatsApp por producto</li>
+                            <li> Horarios de atención</li>
+                            <li> Dirección y ubicación</li>
+                            <li> Código QR personalizado</li>
+                            <li> Apareces en el directorio</li>
+                            <li> Colores y tipografía personalizados</li>
+                            <li class="feature-extra">🔧 Añade mantenimiento por +100 CUP/mes</li>
+                        </ul>
+                        <a href="formulario/formulario.html?plan=bronce" class="btn-pricing">Comenzar</a>
+                    </div>
+                    
+                    <!-- PLAN 2: ORO -->
+                    <div class="pricing-card oro">
+                        <div class="pricing-badge oro"> ORO </div>
+                        <h3>Equilibrio Perfecto</h3>
+                        <div class="pricing-price">500 <span>CUP / mes</span></div>
+                        <ul class="pricing-features">
+                            <li> Hasta 100 productos</li>
+                            <li> WhatsApp por producto</li>
+                            <li> Horarios de atención</li>
+                            <li> Dirección y ubicación</li>
+                            <li> Código QR personalizado</li>
+                            <li> Apareces destacado en el directorio</li>
+                            <li> Buscador de productos</li>
+                            <li> Mapa interactivo</li>
+                            <li> Modo oscuro/claro</li>
+                            <li> Badges (popular, nuevo, oferta)</li>
+                            <li> Galería de fotos (3 por producto)</li>
+                            <li> Mantenimiento mensual INCLUIDO</li>
+                            <li> Colores y tipografía personalizados</li>
+                        </ul>
+                        <a href="formulario/formulario.html?plan=oro" class="btn-pricing btn-pricing-primary">Comenzar</a>
+                    </div>
+                    
+                    <!-- PLAN 3: PLATINO -->
+                    <div class="pricing-card platino">
+                        <div class="pricing-badge platino">PLATINO</div>
+                        <h3>Máximo rendimiento</h3>
+                        <div class="pricing-price">800 <span>CUP / mes</span></div>
+                        <ul class="pricing-features">
+                            <li> Productos ilimitados</li>
+                            <li> Todo lo del plan <span class="mention-gold">ORO</span></li>
+                            <li> Opciones/extras por producto</li>
+                            <li> Mantenimiento mensual INCLUIDO</li>
+                            <li> Soporte prioritario 24/7</li>
+                            <li> Estadísticas de visitas</li>
+                            <li> Prioridad en búsquedas</li>
+                            <li> Colores y tipografía personalizados</li>
+                            <li> Respuesta en menos de 2 horas</li>
+                        </ul>
+                        <a href="formulario/formulario.html?plan=platino" class="btn-pricing platino">Comenzar</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ============================================ FOOTER (Contacto, redes, enlaces) ============================================ -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Columna 1: Sobre nosotros -->
+                <div class="footer-col">
+                    <h3>LA CARTA</h3>
+                    <p>La plataforma de menús digitales para restaurantes, cafeterías y bares en Cuba. Ayudamos a los negocios gastronómicos a llegar a más clientes.</p>
+                </div>
+                
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="footer-col">
+                    <h3>Enlaces</h3>
+                    <ul class="footer-links" aria-label="Enlaces del sitio">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#como-funciona">Cómo funciona</a></li>
+                        <li><a href="#para-negocios">Para negocios</a></li>
+                        <li><a href="#planes">Planes</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 3: Contacto y Redes Sociales -->
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="footer-contact" aria-label="Información de contacto">
+                        <li>
+                            <a href="mailto:info@lacarta.com">
+                                <i class="fas fa-envelope"></i> info@lacarta.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/53 XXXXXXXX" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp"></i> +53 XXXXXXXX
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 24px;">Síguenos</h3>
+                    <ul class="footer-contact social-links" aria-label="Redes sociales">
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© 2026 LA CARTA. Todos los derechos reservados.</p>
+                <p>Menús digitales para negocios gastronómicos en Cuba</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ============================================ BOTONES FLOTANTES ============================================ -->
+    
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/53XXXXXXXX" id="whatsapp-float" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp whatsapp-float-icon"></i>
+        <span class="whatsapp-float-text">Contáctanos</span>
+    </a>
+    
+    <!-- Botón volver arriba -->
+    <button id="back-to-top" class="back-to-top" title="Volver arriba" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    
+    <!-- Archivo de datos -->
+    <script src="js/data.js"></script>
+    
+    <!-- Archivo JavaScript principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>

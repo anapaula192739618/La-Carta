@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Términos y Condiciones | LA CARTA</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold-main: #D4AF37;
+            --gold-dark: #B8860B;
+            --gold-light: #F1D279;
+            --black-midnight: #0A0F14;
+            --black-soft: #1C232B;
+            --white-cream: #FAF9F6;
+            --white-pure: #FFFFFF;
+            --gradient-dark: linear-gradient(135deg, #0A0F14 0%, #1C232B 100%);
+            --gradient-gold: linear-gradient(135deg, #F1D279 0%, #D4AF37 100%);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.1);
+            --border-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gradient-dark);
+            color: var(--white-cream);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 15, 20, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 15px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: auto;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white-cream);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .letter-golden {
+            color: var(--gold-main);
+            font-size: 2rem;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--white-cream);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-main);
+        }
+
+        /* Contenido principal */
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        .legal-card {
+            background: rgba(28, 35, 43, 0.6);
+            backdrop-filter: blur(5px);
+            border-radius: var(--border-radius);
+            padding: 48px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: var(--shadow-md);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 8px;
+            background: var(--gradient-gold);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .fecha {
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-main);
+            margin: 32px 0 16px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: rgba(250, 249, 246, 0.85);
+        }
+
+        ul {
+            margin: 16px 0 16px 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: rgba(250, 249, 246, 0.85);
+        }
+
+        .highlight-gold {
+            color: var(--gold-main);
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 28px;
+            background: transparent;
+            border: 2px solid var(--gold-main);
+            border-radius: 50px;
+            color: var(--gold-main);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background: var(--gradient-gold);
+            color: var(--black-midnight);
+            border-color: transparent;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--black-midnight);
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .legal-card {
+                padding: 28px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            .letter-golden {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../imagenes/LACARTA.png" alt="LA CARTA" class="logo-img" onerror="this.src='https://placehold.co/60x60/1f7a7a/white?text=LC'">
+                <span class="logo-text"><span class="letter-golden">L</span>A CARTA</span>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="../index.html#como-funciona" class="nav-link">Cómo funciona</a></li>
+                <li><a href="../index.html#para-negocios" class="nav-link">Para negocios</a></li>
+                <li><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="legal-container">
+        <div class="legal-card">
+            <h1>Términos y Condiciones</h1>
+            <div class="fecha">📅 Última actualización: 31 de mayo de 2026</div>
+
+            <p>Bienvenido a <span class="highlight-gold">LA CARTA</span>. Al acceder o utilizar nuestro sitio web y servicios, aceptas cumplir con los siguientes términos y condiciones. Si no estás de acuerdo con alguna parte de estos términos, no debes usar nuestro servicio.</p>
+
+            <h2>1. Servicio</h2>
+            <p>LA CARTA es un directorio digital que permite a negocios gastronómicos (restaurantes, cafeterías, bares, heladerías, pastelerías y otros) mostrar sus menús digitales, horarios, ubicación y recibir pedidos a través de WhatsApp.</p>
+
+            <h2>2. Registro y Planes</h2>
+            <p>Para publicar un negocio en LA CARTA, es necesario seleccionar uno de los planes disponibles (Bronce, Oro o Platino). Cada plan tiene características, límites de productos y precios específicos, los cuales pueden ser actualizados periódicamente.</p>
+            <ul>
+                <li><span class="highlight-gold">Bronce:</span> 350 CUP/mes. Hasta 30 productos. Sin mantenimiento incluido.</li>
+                <li><span class="highlight-gold">Oro:</span> 500 CUP/mes. Hasta 100 productos. Mantenimiento incluido.</li>
+                <li><span class="highlight-gold">Platino:</span> 800 CUP/mes. Productos ilimitados. Mantenimiento y soporte prioritario incluidos.</li>
+            </ul>
+
+            <h2>3. Responsabilidades del Negocio</h2>
+            <p>El negocio registrado es el único responsable de la veracidad de la información publicada (precios, productos, horarios, disponibilidad). LA CARTA no se hace responsable por errores en los datos proporcionados por los negocios.</p>
+
+            <h2>4. Pagos y Cancelaciones</h2>
+            <p>Los pagos se realizan mensualmente. El servicio puede ser cancelado en cualquier momento por el negocio. No se realizan reembolsos parciales por meses no completados.</p>
+
+            <h2>5. Propiedad Intelectual</h2>
+            <p>Todo el contenido de LA CARTA (diseño, logotipo, código, imágenes propias) está protegido por derechos de autor. Los negocios conservan los derechos sobre sus logotipos y menús.</p>
+
+            <h2>6. Limitación de Responsabilidad</h2>
+            <p>LA CARTA no garantiza resultados específicos (aumento de ventas, reservas, etc.). El servicio se ofrece "tal cual". No somos responsables por pérdidas derivadas del uso de la plataforma.</p>
+
+            <h2>7. Modificaciones</h2>
+            <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios serán notificados a través del sitio web. El uso continuado del servicio implica la aceptación de los nuevos términos.</p>
+
+            <h2>8. Contacto</h2>
+            <p>Si tienes preguntas sobre estos términos, contáctanos a través de WhatsApp: <span class="highlight-gold">+53 XXXXXXXX</span> o al correo: <span class="highlight-gold">info@lacarta.com</span></p>
+
+            <a href="formulario.html" class="btn-back">← Volver al formulario</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2026 LA CARTA - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

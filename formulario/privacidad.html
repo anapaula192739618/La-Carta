@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Política de Privacidad | LA CARTA</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold-main: #D4AF37;
+            --gold-dark: #B8860B;
+            --gold-light: #F1D279;
+            --black-midnight: #0A0F14;
+            --black-soft: #1C232B;
+            --white-cream: #FAF9F6;
+            --white-pure: #FFFFFF;
+            --gradient-dark: linear-gradient(135deg, #0A0F14 0%, #1C232B 100%);
+            --gradient-gold: linear-gradient(135deg, #F1D279 0%, #D4AF37 100%);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.1);
+            --border-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gradient-dark);
+            color: var(--white-cream);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 15, 20, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 15px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: auto;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white-cream);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .letter-golden {
+            color: var(--gold-main);
+            font-size: 2rem;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--white-cream);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-main);
+        }
+
+        /* Contenido principal */
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        .legal-card {
+            background: rgba(28, 35, 43, 0.6);
+            backdrop-filter: blur(5px);
+            border-radius: var(--border-radius);
+            padding: 48px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: var(--shadow-md);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 8px;
+            background: var(--gradient-gold);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .fecha {
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-main);
+            margin: 32px 0 16px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: rgba(250, 249, 246, 0.85);
+        }
+
+        ul {
+            margin: 16px 0 16px 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: rgba(250, 249, 246, 0.85);
+        }
+
+        .highlight-gold {
+            color: var(--gold-main);
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 28px;
+            background: transparent;
+            border: 2px solid var(--gold-main);
+            border-radius: 50px;
+            color: var(--gold-main);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background: var(--gradient-gold);
+            color: var(--black-midnight);
+            border-color: transparent;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--black-midnight);
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .legal-card {
+                padding: 28px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            .letter-golden {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../imagenes/LACARTA.png" alt="LA CARTA" class="logo-img" onerror="this.src='https://placehold.co/60x60/1f7a7a/white?text=LC'">
+                <span class="logo-text"><span class="letter-golden">L</span>A CARTA</span>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="../index.html#como-funciona" class="nav-link">Cómo funciona</a></li>
+                <li><a href="../index.html#para-negocios" class="nav-link">Para negocios</a></li>
+                <li><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="legal-container">
+        <div class="legal-card">
+            <h1>Política de Privacidad</h1>
+            <div class="fecha">📅 Última actualización: 31 de mayo de 2026</div>
+
+            <p>En <span class="highlight-gold">LA CARTA</span>, valoramos tu privacidad y nos comprometemos a proteger tus datos personales. Esta política explica qué información recopilamos, cómo la usamos y qué derechos tienes sobre ella.</p>
+
+            <h2>1. Información que Recopilamos</h2>
+            <p>Cuando te registras o utilizas nuestros servicios, podemos recopilar la siguiente información:</p>
+            <ul>
+                <li><span class="highlight-gold">Datos de contacto:</span> nombre, teléfono/WhatsApp, correo electrónico, ubicación (ciudad).</li>
+                <li><span class="highlight-gold">Datos del negocio:</span> nombre del negocio, tipo de negocio, menú, horarios, imágenes del logo o productos.</li>
+                <li><span class="highlight-gold">Datos de uso:</span> visitas a tu página de menú, interacciones con el sitio web.</li>
+            </ul>
+
+            <h2>2. Uso de la Información</h2>
+            <p>Utilizamos tus datos para:</p>
+            <ul>
+                <li>✅ Proveer y mantener el servicio de directorio y menú digital.</li>
+                <li>✅ Comunicarnos contigo sobre tu plan, actualizaciones o cambios en el servicio.</li>
+                <li>✅ Mejorar nuestro sitio web y la experiencia del usuario.</li>
+                <li>✅ Enviar información sobre promociones o novedades (solo si aceptaste recibirlas).</li>
+            </ul>
+
+            <h2>3. Datos de los Negocios (Visibles al Público)</h2>
+            <p>La siguiente información de tu negocio será visible para los usuarios del directorio: nombre, tipo de negocio, ubicación (ciudad), horarios, menú, precios, imágenes, enlace de WhatsApp y código QR. No compartimos información personal adicional sin tu consentimiento.</p>
+
+            <h2>4. WhatsApp y Comunicaciones</h2>
+            <p>Los pedidos y consultas de los clientes se realizan a través de WhatsApp directamente al número proporcionado por el negocio. LA CARTA no almacena ni tiene acceso a esas conversaciones.</p>
+
+            <h2>5. Cookies y Tecnologías Similares</h2>
+            <p>Utilizamos cookies para mejorar la experiencia de navegación, recordar preferencias de filtros y analizar el tráfico del sitio. Puedes deshabilitar las cookies desde la configuración de tu navegador.</p>
+
+            <h2>6. Seguridad de los Datos</h2>
+            <p>Implementamos medidas técnicas y organizativas para proteger tu información contra accesos no autorizados, pérdida o alteración. Sin embargo, ninguna transmisión por Internet es 100% segura.</p>
+
+            <h2>7. Tus Derechos</h2>
+            <p>Puedes solicitar:</p>
+            <ul>
+                <li>🔹 Acceder a tus datos personales.</li>
+                <li>🔹 Rectificar información incorrecta.</li>
+                <li>🔹 Cancelar tu cuenta y eliminar tus datos (sujeto a obligaciones legales).</li>
+            </ul>
+            <p>Para ejercer estos derechos, contáctanos por WhatsApp o correo electrónico.</p>
+
+            <h2>8. Menores de Edad</h2>
+            <p>Nuestro servicio está dirigido a negocios y mayores de 18 años. No recopilamos intencionalmente datos de menores de edad.</p>
+
+            <h2>9. Cambios a esta Política</h2>
+            <p>Podemos actualizar esta política ocasionalmente. Los cambios serán publicados en esta página con la fecha de "Última actualización". Te recomendamos revisarla periódicamente.</p>
+
+            <h2>10. Contacto</h2>
+            <p>Si tienes preguntas sobre esta política de privacidad, contáctanos a través de WhatsApp: <span class="highlight-gold">+53 XXXXXXXX</span> o al correo: <span class="highlight-gold">info@lacarta.com</span></p>
+
+            <a href="formulario.html" class="btn-back">← Volver al formulario</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2026 LA CARTA - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

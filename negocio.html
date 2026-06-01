@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Menú Digital - LA CARTA</title>
+    
+    <!-- Leaflet para el mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER (mismo que el index)                   -->
+    <!-- ============================================ -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="LACARTA.png" alt="LA CARTA" class="logo-img">
+                    <span class="logo-text"><span class="letter-golden">L</span>A CARTA</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#como-funciona" class="nav-link">Cómo funciona</a></li>
+                    <li><a href="index.html#para-negocios" class="nav-link">Para negocios</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============================================ -->
+        <!-- 1. HERO: LOGO + NOMBRE + DESCRIPCIÓN          -->
+        <!-- ============================================ -->
+        <section class="negocio-hero">
+            <div class="container">
+                <div class="hero-interno">
+                    <img src="" alt="Logo" id="negocio-logo" class="negocio-logo">
+                    <h1 id="negocio-nombre">Cargando...</h1>
+                    <p id="negocio-descripcion" class="negocio-descripcion"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- 2. INFO: DIRECCIÓN, HORARIOS, CALIFICACIÓN    -->
+        <!-- ============================================ -->
+        <section class="negocio-info">
+            <div class="container">
+                <div class="info-cards">
+                    <div class="info-card"><i class="fas fa-map-marker-alt"></i> <span id="negocio-direccion"></span></div>
+                    <div class="info-card"><i class="fas fa-clock"></i> <span id="negocio-horarios"></span></div>
+                    <div class="info-card"><i class="fas fa-star"></i> <span id="negocio-rating"></span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- 3. WHATSAPP + MAPA INTERACTIVO (lado a lado)  -->
+        <!-- ============================================ -->
+        <section class="contacto-mapa">
+            <div class="container">
+                <div class="contacto-mapa-grid">
+                    <div class="whatsapp-box">
+                        <h3>📱 Contacto directo</h3>
+                        <a href="#" id="whatsapp-principal" class="btn-whatsapp-grande" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+                        </a>
+                        <p class="respuesta-tiempo">⏱️ Respuesta en menos de 5 minutos</p>
+                    </div>
+                    <div class="mapa-box">
+                        <h3>📍 Cómo llegar</h3>
+                        <div id="mapa" class="mapa-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- 4. CATEGORÍAS + BUSCADOR                      -->
+        <!-- ============================================ -->
+        <section class="filtros-menu">
+            <div class="container">
+                <div class="filtros-header">
+                    <div class="categorias-tabs" id="categorias-container"></div>
+                    <div class="buscador-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="buscador-productos" placeholder="Buscar en el menú...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- 5. LISTA DE PRODUCTOS (formato lista)        -->
+        <!-- ============================================ -->
+        <section class="productos-lista">
+            <div class="container">
+                <div id="productos-container" class="productos-list"></div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- 6. MÉTODOS DE PAGO + DELIVERY + REDES        -->
+        <!-- ============================================ -->
+        <section class="info-extra">
+            <div class="container">
+                <div class="info-extra-grid">
+                    <div class="extra-card">
+                        <h3>💳 Métodos de pago</h3>
+                        <div class="pagos">
+                            <span>💵 Efectivo</span>
+                            <span>💳 Transferencia</span>
+                            <span>📱 Envía</span>
+                            <span>💰 MLC</span>
+                        </div>
+                    </div>
+                    <div class="extra-card">
+                        <h3>🚚 Delivery</h3>
+                        <p>🚗 Socio: <strong>Delivery Amigos</strong></p>
+                        <p>📞 WhatsApp: <a href="#" id="delivery-whatsapp">+53 5XXX XXXX</a></p>
+                        <p>💰 Costo: según zona</p>
+                        <p>⏱️ Tiempo: 30-45 min</p>
+                    </div>
+                    <div class="extra-card">
+                        <h3>📱 Contacto</h3>
+                        <p><i class="fab fa-whatsapp"></i> <a href="#" id="whatsapp-footer"></a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="#" id="email-negocio"></a></p>
+                        <div class="redes">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- 7. PREGUNTAS FRECUENTES (FAQ)                 -->
+        <!-- ============================================ -->
+        <section class="faq">
+            <div class="container">
+                <h3>❓ Preguntas frecuentes</h3>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-pregunta">📦 ¿Hacen envíos a domicilio?</div>
+                        <div class="faq-respuesta">Sí, trabajamos con Delivery Amigos. El costo depende de la zona.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-pregunta">💳 ¿Aceptan tarjeta?</div>
+                        <div class="faq-respuesta">Aceptamos efectivo, transferencia y Envía.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-pregunta">⏰ ¿Cuál es el tiempo de entrega?</div>
+                        <div class="faq-respuesta">Entre 30 y 45 minutos aproximadamente.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Botón compartir flotante -->
+        <button id="compartir-btn" class="btn-compartir-flotante">
+            <i class="fas fa-share-alt"></i> Compartir
+        </button>
+    </main>
+
+    <!-- ============================================ -->
+    <!-- FOOTER (mismo que el index)                   -->
+    <!-- ============================================ -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LA CARTA</h3>
+                    <p>La plataforma de menús digitales para restaurantes, cafeterías y bares en Cuba.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+                        <li><a href="index.html#para-negocios">Para negocios</a></li>
+                        <li><a href="index.html#planes">Planes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="footer-contact">
+                        <li><a href="mailto:info@lacarta.com"><i class="fas fa-envelope"></i> info@lacarta.com</a></li>
+                        <li><a href="https://wa.me/5351029659" target="_blank"><i class="fab fa-whatsapp"></i> +53 51029659</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 LA CARTA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/negocio.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registra tu Negocio | LA CARTA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- FORMULARIO DE SUSCRIPCIÓN -->
+    <form id="suscripcion-form" class="suscripcion-form">
+        <h3>FORMULARIO DE SUSCRIPCIÓN</h3>
+        <p>Completa el formulario y te contactaremos en menos de 24 horas</p>
+
+        <div class="form-group">
+            <label for="negocio"> Nombre del negocio</label>
+            <input type="text" id="negocio" name="negocio" required placeholder="Ej: Café El Oriente">
+        </div>
+        <div class="form-group">
+            <label for="tipo"> Tipo de Negocio</label>
+            <select id="tipo" name="tipo" required>
+                <option value="">Selecciona...</option>
+                <option value="restaurante">🍽️ Restaurante</option>
+                <option value="cafeteria">☕ Cafetería</option>
+                <option value="bar">🍸 Bar/Coctelería</option>
+                <option value="heladeria">🍦 Heladería</option>
+                <option value="panaderia">🥐 Panadería/Pastelería</option>
+                <option value="comida-rapida">🍔 Comida Rápida</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nombre"> Nombre del dueño/encargado</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono"> Whatsapp</label>
+                <input type="tel" name="telefono" id="telefono" required placeholder="+53 XXXXXXXX">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ubicacion"> Ubicación</label>
+            <input type="text" id="ubicacion" name="ubicacion" required placeholder="Municipio, Reparto">
+        </div>
+        <label class="checkbox-group">
+            <input type="checkbox" id="terminos" required>
+            <span>Acepto los <a href="terminos.html" target="_blank" style="color: var(--gold-main);">términos y condiciones</a> y la <a href="privacidad.html" target="_blank" style="color: var(--gold-main);">política de privacidad</a></span>
+        </label>
+        <div class="form-group">
+            <input type="submit" class="submit" id="submit" name="submit" required>
+        </div>
+    </form>
+
+    <script>
+    // Seleccionar el formulario
+    const form = document.getElementById('suscripcion-form');
+    
+    // Escuchar el evento de envío
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const negocio = document.getElementById('negocio').value;
+        const tipo = document.getElementById('tipo').value;
+        const nombre = document.getElementById('nombre').value;
+        const telefono = document.getElementById('telefono').value;
+        const ubicacion = document.getElementById('ubicacion').value;
+        const email = document.getElementById('email')?.value || 'No especificado';
+        const tieneMenu = document.getElementById('tiene_menu')?.value || 'No especificado';
+        const mensaje = document.getElementById('mensaje')?.value || 'Sin mensaje adicional';
+        
+        // Verificar campos obligatorios
+        if (!negocio || !tipo || !nombre || !telefono || !ubicacion) {
+            alert('⚠️ Por favor, completa todos los campos obligatorios.');
+            return;
+        }
+        
+        // Verificar el checkbox de términos (si existe)
+        const terminos = document.getElementById('terminos');
+        if (terminos && !terminos.checked) {
+            alert('⚠️ Debes aceptar los términos y condiciones para continuar.');
+            return;
+        }
+        
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan') || 'No especificado';
+        
+        
+        const mensajeWhatsApp = `*NUEVA SOLICITUD DESDE LA CARTA* 🎉
+
+⭐ *Plan de interés:* ${plan}
+📛 *Negocio:* ${negocio}
+🏷️ *Tipo:* ${tipo}
+👤 *Contacto:* ${nombre}
+📞 *WhatsApp:* ${telefono}
+📍 *Ubicación:* ${ubicacion}
+
+📅 *Fecha:* ${new Date().toLocaleString('es-CU')}`;
+        
+        const numeroWhatsApp = '5351029659';
+        
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+        
+        window.open(url, '_blank');
+        
+        alert('✅ ¡Solicitud enviada! Te contactaremos por WhatsApp en menos de 24 horas.');
+        
+        form.reset();
+    });
+</script>
+</body>
+</html>

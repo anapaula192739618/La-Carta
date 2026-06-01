@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baba Yaga - Café & Coctelería | LA CARTA</title>
+    
+    <!-- Fuentes personalizadas (ejemplo para Baba Yaga - estilo místico) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinema:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet para mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../imagenes/LACARTA.png" alt="LA CARTA" class="logo-img">
+                    <span class="logo-text"><span class="letter-golden">L</span>A CARTA</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="#como-funciona" class="nav-link">Cómo funciona</a></li>
+                    <li><a href="#para-negocios" class="nav-link">Para negocios</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="negocio-hero">
+            <div class="container">
+                <div class="hero-interno">
+                    <img src="../imagenes/LOGO.webp" alt="Baba Yaga" class="negocio-logo">
+                    <h1>Baba Yaga</h1>
+                    <p class="negocio-descripcion">Visítanos y no sabrás si vives o sueñas, disfrutando de nuestras exquisitas ofertas y coctelería.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFO -->
+        <section class="negocio-info">
+            <div class="container">
+                <div class="info-cards">
+                    <div class="info-card"><i class="fas fa-map-marker-alt"></i>📍 Luis Estevez entre Martí y Boulevard #358, Santa Clara</div>
+                    <div class="info-card"><i class="fas fa-clock"></i>⏰ Lun-Jue: 10:30am-10:30pm / Vie-Dom: 10:30am-12:00am</div>
+                    <div class="info-card"><i class="fas fa-star"></i>⭐ 3.9 (24 reseñas)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHATSAPP + MAPA -->
+        <section class="contacto-mapa">
+            <div class="container">
+                <div class="contacto-mapa-grid">
+                    <div class="whatsapp-box">
+                        <h3>📱 Contacto directo</h3>
+                        <a href="https://wa.me/5356715283?text=Hola%2C%20vi%20su%20men%C3%BA%20en%20LA%20CARTA%20y%20quisiera%20hacer%20un%20pedido" class="btn-whatsapp-grande" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+                        </a>
+                    </div>
+                    <div class="mapa-box">
+                        <h3>📍 Cómo llegar</h3>
+                        <div id="mapa" class="mapa-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORÍAS + BUSCADOR -->
+        <section class="filtros-menu">
+            <div class="container">
+                <div class="filtros-header">
+                    <div class="categorias-tabs">
+                        <button class="categoria-tab active" data-cat="Cafés">☕ Cafés</button>
+                        <button class="categoria-tab" data-cat="Bebidas Frías">🥤 Bebidas Frías</button>
+                        <button class="categoria-tab" data-cat="Coctelería">🍸 Coctelería</button>
+                        <button class="categoria-tab" data-cat="Comidas">🍔 Comidas</button>
+                        <button class="categoria-tab" data-cat="Postres">🍰 Postres</button>
+                    </div>
+                    <div class="buscador-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="buscador-productos" placeholder="Buscar en el menú...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTOS -->
+        <section class="productos-lista">
+            <div class="container">
+                <div id="productos-container" class="productos-list">
+                    <!-- Productos cargados dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <!-- MÉTODOS DE PAGO + DELIVERY + REDES -->
+        <section class="info-extra">
+            <div class="container">
+                <div class="info-extra-grid">
+                    <div class="extra-card">
+                        <h3>💳 Métodos de pago</h3>
+                        <div class="pagos">
+                            <span>💵 Efectivo</span>
+                            <span>💳 Transferencia</span>
+                            <span>📱 Envía</span>
+                            <span>💰 MLC</span>
+                        </div>
+                    </div>
+                    <div class="extra-card">
+                        <h3>🚚 Delivery</h3>
+                        <p>🚗 Socio: <strong>Delivery Amigos</strong></p>
+                        <p>📞 WhatsApp: <a href="https://wa.me/535XXXXXXXX">+53 5XXX XXXX</a></p>
+                        <p>💰 Costo: según zona</p>
+                        <p>⏱️ Tiempo: 30-45 min</p>
+                    </div>
+                    <div class="extra-card">
+                        <h3>📱 Contacto</h3>
+                        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5356715283">+53 56715283</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@babayaga.com">info@babayaga.com</a></p>
+                        <div class="redes">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq">
+            <div class="container">
+                <h3>❓ Preguntas frecuentes</h3>
+                <div class="faq-grid">
+                    <div class="faq-item"><div class="faq-pregunta">📦 ¿Hacen envíos a domicilio?</div><div class="faq-respuesta">Sí, trabajamos con Delivery Amigos.</div></div>
+                    <div class="faq-item"><div class="faq-pregunta">💳 ¿Aceptan tarjeta?</div><div class="faq-respuesta">Sí, transferencia y Envía.</div></div>
+                    <div class="faq-item"><div class="faq-pregunta">⏰ ¿Tiempo de entrega?</div><div class="faq-respuesta">30-45 minutos.</div></div>
+                </div>
+            </div>
+        </section>
+
+        <button id="compartir-btn" class="btn-compartir-flotante"><i class="fas fa-share-alt"></i> Compartir</button>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h3>LA CARTA</h3><p>Directorio de menús digitales en Cuba</p></div>
+                <div class="footer-col"><h3>Enlaces</h3><ul class="footer-links"><li><a href="index.html">Inicio</a></li><li><a href="#como-funciona">Cómo funciona</a></li><li><a href="#para-negocios">Para negocios</a></li><li><a href="#planes">Planes</a></li></ul></div>
+                <div class="footer-col"><h3>Contacto</h3><ul class="footer-contact"><li><a href="mailto:info@lacarta.com">info@lacarta.com</a></li><li><a href="https://wa.me/5351029659">+53 51029659</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>© 2026 LA CARTA. Todos los derechos reservados.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        // Datos del negocio (Baba Yaga)
+        const negocio = {
+            nombre: "Baba Yaga",
+            whatsapp: "5356715283",
+            catalogo: [
+                { nombre: "Affogato", categoria: "Cafés", ingredientes: "Café expreso con helado de vainilla", precio: 240, imagen: "../imagenes/baba-yaga/affogato.webp", extras: [{nombre:"Helado extra",precio:50}] },
+                { nombre: "Cortadito", categoria: "Cafés", ingredientes: "Café cubano cortado con leche", precio: 180, imagen: "../imagenes/baba-yaga/cafe-cortado.webp" },
+                { nombre: "Mojito", categoria: "Coctelería", ingredientes: "Ron, hierbabuena, lima, soda", precio: 350, imagen: "../imagenes/baba-yaga/mojito.webp", extras: [{nombre:"Ron extra",precio:80}] },
+                { nombre: "Sandwich Cubano", categoria: "Comidas", ingredientes: "Cerdo, jamón, queso, pepinillos", precio: 500, imagen: "../imagenes/baba-yaga/sandwich.webp" },
+                { nombre: "Pastel de Guayaba", categoria: "Postres", ingredientes: "Masa hojaldrada con guayaba", precio: 250, imagen: "../imagenes/baba-yaga/pastel.webp" },
+                { nombre: "Batido de Mango", categoria: "Bebidas Frías", ingredientes: "Mango natural con leche", precio: 200, imagen: "../imagenes/baba-yaga/batido.webp" }
+            ]
+        };
+
+        // Renderizar productos
+        function renderizarProductos(categoria) {
+            const productos = negocio.catalogo.filter(p => p.categoria === categoria);
+            const container = document.getElementById('productos-container');
+            if (productos.length === 0) { container.innerHTML = '<p>No hay productos</p>'; return; }
+            container.innerHTML = productos.map(p => `
+                <div class="producto-list-item">
+                    <img src="${p.imagen || 'https://placehold.co/200x200'}" class="producto-img-cuadrada">
+                    <div class="producto-info-lista">
+                        <div class="producto-header-lista">
+                            <h4>${p.nombre}</h4>
+                            ${p.extras ? `<button class="btn-extras" data-extras='${JSON.stringify(p.extras)}'>➕ Agregados</button>` : ''}
+                        </div>
+                        ${p.ingredientes ? `<p class="producto-ingredientes">${p.ingredientes}</p>` : ''}
+                        <div class="producto-footer-lista">
+                            <span class="producto-precio">${p.precio} CUP</span>
+                            <a href="https://wa.me/${negocio.whatsapp}?text=Quisiera%20pedir%3A%20${encodeURIComponent(p.nombre)}" class="btn-pedir" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.querySelectorAll('.btn-extras').forEach(btn => {
+                btn.onclick = () => { const extras = JSON.parse(btn.dataset.extras); alert('Agregados:\n' + extras.map(e => `• ${e.nombre}: +${e.precio} CUP`).join('\n')); };
+            });
+        }
+
+        // Inicializar
+        document.querySelectorAll('.categoria-tab').forEach(tab => {
+            tab.onclick = () => {
+                document.querySelectorAll('.categoria-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                renderizarProductos(tab.innerText.replace(/[^a-zA-ZáéíóúÁÉÍÓÚ ]/g, '').trim());
+            };
+        });
+        renderizarProductos('Cafés');
+
+        // Buscador
+        document.getElementById('buscador-productos').oninput = (e) => {
+            const query = e.target.value.toLowerCase();
+            const productos = negocio.catalogo.filter(p => p.nombre.toLowerCase().includes(query));
+            const container = document.getElementById('productos-container');
+            container.innerHTML = productos.map(p => `
+                <div class="producto-list-item">
+                    <img src="${p.imagen || 'https://placehold.co/200x200'}" class="producto-img-cuadrada">
+                    <div class="producto-info-lista">
+                        <h4>${p.nombre}</h4>
+                        ${p.ingredientes ? `<p class="producto-ingredientes">${p.ingredientes}</p>` : ''}
+                        <div class="producto-footer-lista">
+                            <span class="producto-precio">${p.precio} CUP</span>
+                            <a href="https://wa.me/${negocio.whatsapp}?text=Quisiera%20pedir%3A%20${encodeURIComponent(p.nombre)}" class="btn-pedir" target="_blank">Pedir</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        };
+
+        // Mapa
+        const mapa = L.map('mapa').setView([22.4092321, -79.9679881], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(mapa);
+        L.marker([22.4092321, -79.9679881]).addTo(mapa).bindPopup('<b>Baba Yaga</b><br>Luis Estevez entre Martí y Boulevard #358');
+
+        // Compartir
+        document.getElementById('compartir-btn').onclick = () => { navigator.clipboard.writeText(window.location.href); alert('Enlace copiado'); };
+
+        // Menú móvil
+        document.querySelector('.menu-toggle').onclick = () => document.querySelector('.main-nav').classList.toggle('active');
+    </script>
+</body>
+</html>
